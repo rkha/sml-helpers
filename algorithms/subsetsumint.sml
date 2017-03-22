@@ -33,7 +33,8 @@ struct
         val midBranchSols = solveHelper rightBranchSols currentState L
     in
         midBranchSols
-    end
+    end;
 
-    fun solve L = solveHelper [] ([], []) L;
+    fun solve [] = []
+    |   solve L = solveHelper [] ([], []) L;
 end
