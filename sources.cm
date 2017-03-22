@@ -3,11 +3,17 @@ Library
 
     signature SUBSETSUMINT
     structure SubsetSumInt
+
+    structure TwoDigits
+    structure ThreeDigits
 is
     utils/utils.sml
 
     algorithms/subsetsumint.sig
     algorithms/subsetsumint.sml
+
+    vidya/twodigits.sml
+    vidya/threedigits.sml
 
     $/basis.cm
     $/smlnj-lib.cm
