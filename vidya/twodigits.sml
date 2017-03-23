@@ -1,5 +1,7 @@
-structure TwoDigits =
+functor TwoDigitsFn (TDP : TWODIGITSPROBLEMS) :> TWODIGITS =
 struct
+    val size = 9;
+
     fun sum L = List.foldl (fn (x,z) => Int.+(x,z)) 0 L;
 
     fun solve L =
@@ -27,4 +29,17 @@ struct
     in
         ListMergeSort.uniqueSort (dupeCheck) naiveSolutions
     end;
-end
+
+    fun solveN' n [] = []
+    |   solveN' n ((x as {id = id, group = group, nums = nums}) :: L) =
+        if (n = id)
+        then
+            solve nums
+        else
+            solveN' n L;
+    fun solveN n = solveN' n (TDP.problems);
+
+    fun solveAll() = List.map (fn {id=id, group=group, nums=nums} => {id=id, group=group, sols=solve nums}) (TDP.problems);
+end;
+
+structure TwoDigits :> TWODIGITS = TwoDigitsFn (TwoDigitsProblems);

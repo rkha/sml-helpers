@@ -4,6 +4,7 @@ Library
     signature SUBSETSUMINT
     structure SubsetSumInt
 
+    structure TwoDigitsProblems
     structure TwoDigits
     structure ThreeDigits
 is
@@ -12,6 +13,8 @@ is
     algorithms/subsetsumint.sig
     algorithms/subsetsumint.sml
 
+    vidya/twodigits.sig
+    vidya/twodigitsproblems.sml
     vidya/twodigits.sml
     vidya/threedigits.sml
 
