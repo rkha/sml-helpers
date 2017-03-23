@@ -40,6 +40,12 @@ struct
     fun solveN n = solveN' n (TDP.problems);
 
     fun solveAll() = List.map (fn {id=id, group=group, nums=nums} => {id=id, group=group, sols=solve nums}) (TDP.problems);
+
+    fun isPartition (X,Y) = ((length X) + (length Y) = size);
+    fun findAllPartitions() =
+        List.filter (fn {id=id, group=group, sols=[]} => false | _ => true) (
+            List.map (fn {id=id, group=group, sols=sols} => {id=id, group=group, sols=List.filter (isPartition) sols}) (solveAll())
+        );
 end;
 
 structure TwoDigits :> TWODIGITS = TwoDigitsFn (TwoDigitsProblems);
