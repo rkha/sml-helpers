@@ -1,6 +1,6 @@
 functor TwoDigitsFn (TDP : TWODIGITSPROBLEMS) :> TWODIGITS =
 struct
-    val size = 9;
+    val size = TDP.size;
 
     fun sum L = List.foldl (fn (x,z) => Int.+(x,z)) 0 L;
 

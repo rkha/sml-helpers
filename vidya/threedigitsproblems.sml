@@ -1,5 +1,7 @@
 structure ThreeDigitsProblems =
 struct
+    val size = 14;
+
     (* type problem = {id : int, group : string, nums : int list}*)
     type problem = {id : int, group : string, nums : int list};
 
